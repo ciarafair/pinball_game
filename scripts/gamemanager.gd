@@ -9,6 +9,8 @@ var selectedTileTrigger: Dictionary = {
 	"RIGHT": false
 	}
 
+@export var tile_dictionary: Dictionary = {}
+
 var points: int = 0
 
 var spawner: Node2D = null

@@ -22,6 +22,8 @@ var leftTriggerInstance: Tile = null
 var rightTriggerInstance: Tile = null
 @export var tileType: TileType
 
+var dictionary_position: Vector2
+
 func _ready() -> void:
 	set_texture(self)
 	return
@@ -268,6 +270,13 @@ func empty_check() -> bool:
 	return true
 
 func _on_pressed() -> void:
+	if GameManager.tile_dictionary.has(str(dictionary_position)) == false:
+		print_debug("Error: Tile data not found for position ", dictionary_position)
+		return
+
+	if GameManager.tile_dictionary[str(dictionary_position)]["Type"] == "Hole":
+		print_debug("Tile ", dictionary_position, " has a hole. You cannot place a tile on tile.")
+		return
 
 	# Makes it so that you can only replace tiles with empty tiles, and you can only place non-empty tiles on empty tiles.
 	if GameManager.selectedTileType != TileType.EMPTY:
