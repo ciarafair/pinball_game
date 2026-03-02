@@ -41,7 +41,7 @@ func set_tilemap() -> void:
 					tile_effect = "Destructive"
 					destructive_effect_added = true
 
-				if destructive_effect_chance < 75 and not point_block_added:
+				if point_block_chance > 75 and not point_block_added:
 					tile_effect = "Point Block"
 					point_block_added = true
 			else:
