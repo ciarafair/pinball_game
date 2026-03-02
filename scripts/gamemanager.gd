@@ -9,6 +9,8 @@ var selectedTileTrigger: Dictionary = {
 	"RIGHT": false
 	}
 
+var points: int = 0
+
 var spawner: Node2D = null
 var fireballScene: Resource = preload("res://scenes/fireball.tscn")
 
@@ -22,9 +24,7 @@ func create_fireball(spawner: Node2D) -> void:
 	print_debug("Creating fireball...")
 	if canShoot == true: 
 		var fireballInstance = fireballScene.instantiate()
-		fireballInstance.dir = spawner.global_rotation - 1.5708 # 90 degrees in radians
-		fireballInstance.pos = spawner.global_position
-		fireballInstance.rota = spawner.global_rotation
 		spawner.add_child(fireballInstance)
+		fireballInstance.direction = Vector2(0, -1)
 		canShoot = false
 		shoot_timer()

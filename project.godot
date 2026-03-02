@@ -13,7 +13,7 @@ config_version=5
 config/name="Pins"
 run/main_scene="uid://ct4385mc0y5qr"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://c5ytlo3t73b6s"
 
 [autoload]
 
