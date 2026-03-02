@@ -24,6 +24,8 @@ GameManager="*uid://b70wc3imlv8g3"
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/canvas_textures/default_texture_filter=1
+window/icon="uid://c5ytlo3t73b6s"
+window/image=""
 
 [physics]
 

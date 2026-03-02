@@ -31,12 +31,12 @@ metadata/_edit_lock_ = true
 
 [node name="Grid" parent="." unique_id=272230482 instance=ExtResource("5_b121j")]
 
-[node name="Spawner" type="Node2D" parent="." unique_id=2000757589]
+[node name="Spawner" type="Node2D" parent="." unique_id=500146823]
 unique_name_in_owner = true
-position = Vector2(368, 496)
+position = Vector2(384, 496)
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Spawner" unique_id=2054373069]
+[node name="Sprite2D" type="Sprite2D" parent="Spawner" unique_id=1434285634]
 scale = Vector2(2, 2)
 texture = ExtResource("5_ppgk2")
 metadata/_edit_lock_ = true
