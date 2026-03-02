@@ -14,11 +14,6 @@ anchor_right = 0.033333335
 anchor_bottom = 0.05925926
 theme = ExtResource("1_ywnoi")
 script = ExtResource("2_q7utx")
-isTopTrigger = null
-isBottomTrigger = null
-isLeftTrigger = null
-isRightTrigger = null
-tileType = null
 metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1409863359]

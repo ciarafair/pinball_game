@@ -23,7 +23,7 @@ var rightTriggerInstance: Tile = null
 @export var tileType: TileType
 
 func _ready() -> void:
-	set_texture()
+	set_texture(self)
 	return
 
 func tile_action() -> void:
@@ -65,6 +65,8 @@ func tile_action() -> void:
 			return
 		if self.tileType == TileType.COUNTER:
 			#print_debug("Counter tile hit.")
+			self.fireballInstance.direction = -self.fireballInstance.direction
+			self.fireballInstance = null
 			return
 		if self.tileType == TileType.BOUNCE:
 			#print_debug("Bouncing projectile.")
@@ -75,6 +77,7 @@ func tile_action() -> void:
 			#print_debug("Trigger tile hit.")
 			GameManager.points += 1
 			self.fireballInstance = null
+			reset_type(self)
 			return
 		return
 
@@ -91,35 +94,37 @@ func _on_area_2d_body_shape_exited(_body_rid: RID, _body: Fireball, _body_shape_
 	self.fireballInstance = null
 	return
 
-func set_texture() -> void:
-	var textureRectInstance: TextureRect = get_node("TextureRect")
-	if self.tileType == TileType.EMPTY:
+func set_texture(node) -> void:
+	var textureRectInstance: TextureRect = node.get_node("TextureRect")
+	if node.tileType == TileType.EMPTY:
 		textureRectInstance.texture = null
-	if self.tileType == TileType.DESTRUCTIVE:
+	if node.tileType == TileType.DESTRUCTIVE:
 		textureRectInstance.texture = binTexture
-	if self.tileType == TileType.TOPLEFTCORNER:
+	if node.tileType == TileType.TOPLEFTCORNER:
 		textureRectInstance.texture = topLeftCornerTexture
-	if self.tileType == TileType.TOPRIGHTCORNER:
+	if node.tileType == TileType.TOPRIGHTCORNER:
 		textureRectInstance.texture = topRightCornerTexture
-	if self.tileType == TileType.BOTTOMLEFTCORNER:
+	if node.tileType == TileType.BOTTOMLEFTCORNER:
 		textureRectInstance.texture = bottomLeftCornerTexture
-	if self.tileType == TileType.BOTTOMRIGHTCORNER:
+	if node.tileType == TileType.BOTTOMRIGHTCORNER:
 		textureRectInstance.texture = bottomRightCornerTexture
-	if self.tileType == TileType.COUNTER:
+	if node.tileType == TileType.COUNTER:
 		textureRectInstance.texture = counterTexture
-	if self.tileType == TileType.BOUNCE:
+	if node.tileType == TileType.BOUNCE:
 		textureRectInstance.texture = bounceTexture
-	if self.tileType == TileType.TRIGGERTOP:
+	if node.tileType == TileType.TRIGGERTOP:
 		textureRectInstance.texture = triggerTexture
-	if self.tileType == TileType.TRIGGERBOTTOM:
+	if node.tileType == TileType.TRIGGERBOTTOM:
 		textureRectInstance.texture = triggerTexture
-		textureRectInstance.flip_v = true
-	if self.tileType == TileType.TRIGGERLEFT:
+	if node.tileType == TileType.TRIGGERLEFT:
 		textureRectInstance.texture = triggerTexture
-		textureRectInstance.rotation_degrees = -90
-	if self.tileType == TileType.TRIGGERRIGHT:
+	if node.tileType == TileType.TRIGGERRIGHT:
 		textureRectInstance.texture = triggerTexture
-		textureRectInstance.rotation_degrees = 90
+	return
+
+func reset_type(node: Tile) -> void:
+	node.tileType = TileType.EMPTY
+	set_texture(node)
 	return
 
 # Specific check for top trigger.
@@ -242,16 +247,16 @@ func check_trigger() -> bool:
 	# Changes the tile type of the trigger tiles to the correct trigger tile type, and sets their texture.
 	if self.topTriggerInstance != null:
 		self.topTriggerInstance.tileType = TileType.TRIGGERTOP
-		self.topTriggerInstance.set_texture()
+		self.topTriggerInstance.set_texture(self.topTriggerInstance)
 	if self.bottomTriggerInstance != null:
 		self.bottomTriggerInstance.tileType = TileType.TRIGGERBOTTOM
-		self.bottomTriggerInstance.set_texture()
+		self.bottomTriggerInstance.set_texture(self.bottomTriggerInstance)
 	if self.leftTriggerInstance != null:
 		self.leftTriggerInstance.tileType = TileType.TRIGGERLEFT
-		self.leftTriggerInstance.set_texture()
+		self.leftTriggerInstance.set_texture(self.leftTriggerInstance)
 	if self.rightTriggerInstance != null:
 		self.rightTriggerInstance.tileType = TileType.TRIGGERRIGHT
-		self.rightTriggerInstance.set_texture()
+		self.rightTriggerInstance.set_texture(self.rightTriggerInstance)
 
 	return true
 
@@ -276,5 +281,5 @@ func _on_pressed() -> void:
 		return
 
 	self.tileType = GameManager.selectedTileType
-	set_texture()
+	set_texture(self)
 	return
