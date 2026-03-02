@@ -1,6 +1,6 @@
 class_name Tile extends Control
 
-enum TileType {EMPTY, DESTRUCTIVE, TOPLEFTCORNER, TOPRIGHTCORNER, BOTTOMLEFTCORNER, BOTTOMRIGHTCORNER, BOUNCE, TRIGGERTOP, TRIGGERBOTTOM, TRIGGERLEFT, TRIGGERRIGHT, COUNTER}
+enum TileType {EMPTY, DESTRUCTIVE, TOPLEFTCORNER, TOPRIGHTCORNER, BOTTOMLEFTCORNER, BOTTOMRIGHTCORNER, BOUNCE, TRIGGERTOP, TRIGGERBOTTOM, TRIGGERLEFT, TRIGGERRIGHT, POINT_BLOCK}
 var binTexture: Resource = preload("res://assets/textures/bin.png")
 var topLeftCornerTexture: Resource = preload("res://assets/textures/topleft.png")
 var topRightCornerTexture: Resource = preload("res://assets/textures/topright.png")
@@ -8,7 +8,7 @@ var bottomLeftCornerTexture: Resource = preload("res://assets/textures/bottomlef
 var bottomRightCornerTexture: Resource = preload("res://assets/textures/bottomright.png")
 var bounceTexture: Resource = preload("res://assets/textures/bounce.png")
 var triggerTexture: Resource = preload("res://assets/textures/point.png")
-var counterTexture: Resource = preload("res://assets/textures/counter.png")
+var pointBlockTexture: Resource = preload("res://assets/textures/pointblock.png")
 
 var fireballInstance: Fireball = null
 
@@ -25,7 +25,14 @@ var rightTriggerInstance: Tile = null
 var dictionary_position: Vector2
 
 func _ready() -> void:
+	SignalManager.connect("GridComplete", _on_grid_complete)
+	return
+
+func _on_grid_complete() -> void:
 	set_texture(self)
+
+	if self.tileType == TileType.POINT_BLOCK:
+		generate_points()
 	return
 
 func tile_action() -> void:
@@ -65,8 +72,8 @@ func tile_action() -> void:
 				self.fireballInstance.direction = Vector2(0,-1) # Up
 			self.fireballInstance = null
 			return
-		if self.tileType == TileType.COUNTER:
-			#print_debug("Counter tile hit.")
+		if self.tileType == TileType.POINT_BLOCK:
+			#print_debug("POINT_BLOCK tile hit.")
 			self.fireballInstance.direction = -self.fireballInstance.direction
 			self.fireballInstance = null
 			return
@@ -110,8 +117,8 @@ func set_texture(node) -> void:
 		textureRectInstance.texture = bottomLeftCornerTexture
 	if node.tileType == TileType.BOTTOMRIGHTCORNER:
 		textureRectInstance.texture = bottomRightCornerTexture
-	if node.tileType == TileType.COUNTER:
-		textureRectInstance.texture = counterTexture
+	if node.tileType == TileType.POINT_BLOCK:
+		textureRectInstance.texture = pointBlockTexture
 	if node.tileType == TileType.BOUNCE:
 		textureRectInstance.texture = bounceTexture
 	if node.tileType == TileType.TRIGGERTOP:
@@ -219,28 +226,49 @@ func is_trigger_selected() -> bool:
 			pass
 	return false
 
+func generate_points() -> void:
+	get_node("Area2D/TopRaycast").enabled = true
+	get_node("Area2D/BottomRaycast").enabled = true
+	get_node("Area2D/LeftRaycast").enabled = true
+	get_node("Area2D/RightRaycast").enabled = true
+
+	await get_tree().process_frame
+
+	if top_trigger_check():
+		topTriggerInstance.tileType = TileType.TRIGGERTOP
+		topTriggerInstance.set_texture(topTriggerInstance)
+	if bottom_trigger_check():
+		bottomTriggerInstance.tileType = TileType.TRIGGERBOTTOM
+		bottomTriggerInstance.set_texture(bottomTriggerInstance)
+	if left_trigger_check():
+		leftTriggerInstance.tileType = TileType.TRIGGERLEFT
+		leftTriggerInstance.set_texture(leftTriggerInstance)
+	if right_trigger_check():
+		rightTriggerInstance.tileType = TileType.TRIGGERRIGHT
+		rightTriggerInstance.set_texture(rightTriggerInstance)
+
 #! Checks if selected trigger can be placed. Needs to be updated with addition of more trigger options.
-func check_trigger() -> bool:
-	if GameManager.selectedTileType == TileType.COUNTER:
+func check_trigger(dictionary: Dictionary) -> bool:
+	if GameManager.selectedTileType == TileType.POINT_BLOCK:
 		if is_trigger_selected() == false:
 			print_debug("No trigger options selected.")
 			return false
-		if GameManager.selectedTileTrigger["TOP"] == true:
+		if dictionary["TOP"] == true:
 			if top_trigger_check() == false:
 				self.topTriggerInstance = null
 				print_debug("Top trigger check failed.")
 				return false
-		if GameManager.selectedTileTrigger["BOTTOM"] == true:
+		if dictionary["BOTTOM"] == true:
 			if bottom_trigger_check() == false:
 				self.bottomTriggerInstance = null
 				print_debug("Bottom trigger check failed.")
 				return false
-		if GameManager.selectedTileTrigger["LEFT"] == true:
+		if dictionary["LEFT"] == true:
 			if left_trigger_check() == false:
 				self.leftTriggerInstance = null
 				print_debug("Left trigger check failed.")
 				return false
-		if GameManager.selectedTileTrigger["RIGHT"] == true:
+		if dictionary["RIGHT"] == true:
 			if right_trigger_check() == false:
 				self.rightTriggerInstance = null
 				print_debug("Right trigger check failed.")
@@ -285,7 +313,7 @@ func _on_pressed() -> void:
 			return
 
 	# Checks if trigger options are selected, and if so, checks if the trigger can be placed.
-	if check_trigger() == false:
+	if check_trigger(GameManager.selectedTileTrigger) == false:
 		print_debug("Could not place tile.")
 		return
 

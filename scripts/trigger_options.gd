@@ -2,7 +2,7 @@ extends VBoxContainer
 
 
 func _process(_delta: float) -> void:
-	if GameManager.selectedTileType != Tile.TileType.COUNTER:
+	if GameManager.selectedTileType != Tile.TileType.POINT_BLOCK:
 		self.visible = false
 	else: 
 		self.visible = true

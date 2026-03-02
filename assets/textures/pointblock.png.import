@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck4kegfqmmro3"
-path="res://.godot/imported/counter.png-871aacad8778d61e03ee68af7b59e3e7.ctex"
+uid="uid://42n4460ahfao"
+path="res://.godot/imported/pointblock.png-c57550e4bb70d45fe8eff4e3ed4fa176.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/counter.png"
-dest_files=["res://.godot/imported/counter.png-871aacad8778d61e03ee68af7b59e3e7.ctex"]
+source_file="res://assets/textures/pointblock.png"
+dest_files=["res://.godot/imported/pointblock.png-c57550e4bb70d45fe8eff4e3ed4fa176.ctex"]
 
 [params]
 

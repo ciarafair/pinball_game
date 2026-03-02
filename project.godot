@@ -13,11 +13,11 @@ config_version=5
 config/name="Pins"
 run/main_scene="uid://ct4385mc0y5qr"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="uid://c5ytlo3t73b6s"
 
 [autoload]
 
 GameManager="*uid://b70wc3imlv8g3"
+SignalManager="*uid://dy65jpti3r2vg"
 
 [display]
 
