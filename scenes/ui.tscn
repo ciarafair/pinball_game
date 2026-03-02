@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://01hbsv5q5j48" path="res://assets/fonts/Vastantonius.ttf" id="1_8dubc"]
 [ext_resource type="Script" uid="uid://bnr3hq0p1uiow" path="res://scripts/ui.gd" id="1_p7vwb"]
 [ext_resource type="Theme" uid="uid://ymwserri8enb" path="res://assets/themes/button.tres" id="2_8dubc"]
+[ext_resource type="StyleBox" uid="uid://qbm4h5tvvgcs" path="res://assets/ButtonStylebox.tres" id="3_7dvkv"]
 [ext_resource type="Script" uid="uid://brnsp02ssd2rm" path="res://scripts/points_label.gd" id="3_cgfq5"]
 [ext_resource type="Theme" uid="uid://cr26funxprou4" path="res://assets/themes/option_button.tres" id="3_ktti3"]
 [ext_resource type="Script" uid="uid://yufrv66bes88" path="res://scripts/option_button.gd" id="4_cgfq5"]
@@ -1584,7 +1585,7 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GameInfo" type="MarginContainer" parent="." unique_id=975738901]
+[node name="RightBar" type="MarginContainer" parent="." unique_id=975738901]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1596,74 +1597,106 @@ theme_override_constants/margin_right = 32
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
-[node name="Background2" type="Panel" parent="GameInfo" unique_id=1152252965]
+[node name="Background2" type="Panel" parent="RightBar" unique_id=1152252965]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 metadata/_edit_lock_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="GameInfo" unique_id=1218870367]
+[node name="MarginContainer" type="MarginContainer" parent="RightBar" unique_id=1218870367]
 layout_mode = 2
 theme_override_constants/margin_top = 16
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameInfo/MarginContainer" unique_id=1172438656]
+[node name="VBoxContainer" type="VBoxContainer" parent="RightBar/MarginContainer" unique_id=1172438656]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="GameInfo/MarginContainer/VBoxContainer" unique_id=1074200715]
+[node name="Label" type="RichTextLabel" parent="RightBar/MarginContainer/VBoxContainer" unique_id=1074200715]
 layout_mode = 2
 theme = SubResource("Theme_h6wmr")
-text = "next tile:"
+text = "NEXT TILE:"
 fit_content = true
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="GameInfo" unique_id=435023063]
+[node name="MarginContainer2" type="MarginContainer" parent="RightBar" unique_id=435023063]
 layout_mode = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 37
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 456
 
-[node name="Background" type="Panel" parent="GameInfo/MarginContainer2" unique_id=475209234]
+[node name="Background" type="Panel" parent="RightBar/MarginContainer2" unique_id=475209234]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 
-[node name="MarginContainer3" type="MarginContainer" parent="GameInfo" unique_id=611314798]
+[node name="MarginContainer3" type="MarginContainer" parent="RightBar" unique_id=611314798]
 layout_mode = 2
 theme_override_constants/margin_top = 96
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameInfo/MarginContainer3" unique_id=1203051481]
+[node name="VBoxContainer" type="VBoxContainer" parent="RightBar/MarginContainer3" unique_id=1203051481]
 layout_mode = 2
 
-[node name="PointsLabel" type="RichTextLabel" parent="GameInfo/MarginContainer3/VBoxContainer" unique_id=154678867]
+[node name="PointsLabel" type="RichTextLabel" parent="RightBar/MarginContainer3/VBoxContainer" unique_id=154678867]
 layout_mode = 2
 theme = SubResource("Theme_h6wmr")
-text = "points: 0"
+text = "POINTS: N/Ass"
 fit_content = true
 horizontal_alignment = 1
 script = ExtResource("3_cgfq5")
 
-[node name="Dev Options" type="MarginContainer" parent="." unique_id=1351485086]
+[node name="LeftBar" type="MarginContainer" parent="." unique_id=1351485086]
 layout_mode = 0
 offset_right = 937.0
 offset_bottom = 559.0
 theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 165
+theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 730
-theme_override_constants/margin_bottom = 199
 metadata/_edit_lock_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Dev Options" unique_id=1975079287]
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftBar" unique_id=388992560]
 layout_mode = 2
-theme_override_constants/separation = 25
+theme_override_constants/separation = 20
 
-[node name="FireButton" type="Button" parent="Dev Options/VBoxContainer" unique_id=1505859896]
+[node name="VBoxContainer2" type="VBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1127666692]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LevelName" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1522544431]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="RichTextLabel" parent="LeftBar/VBoxContainer/VBoxContainer2/LevelName" unique_id=44385031]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_h6wmr")
+text = "INVENTORY"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=201036725]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("3_7dvkv")
+
+[node name="FireButton" type="Button" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1505859896]
 layout_mode = 2
 theme = ExtResource("2_8dubc")
 text = "SHOOT"
 metadata/_edit_use_anchors_ = true
 
-[node name="TileOptions" type="OptionButton" parent="Dev Options/VBoxContainer" unique_id=1810759873]
+[node name="DevOptions" type="VBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1975079287]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TileOptions" type="OptionButton" parent="LeftBar/VBoxContainer/DevOptions" unique_id=1810759873]
 layout_mode = 2
 theme = ExtResource("3_ktti3")
 alignment = 1
@@ -1672,34 +1705,34 @@ popup/item_0/text = "Lorum Ipsum"
 popup/item_0/id = 0
 script = ExtResource("4_cgfq5")
 
-[node name="TriggerOptions" type="VBoxContainer" parent="Dev Options/VBoxContainer" unique_id=599620361]
+[node name="TriggerOptions" type="VBoxContainer" parent="LeftBar/VBoxContainer/DevOptions" unique_id=599620361]
 visible = false
 layout_mode = 2
 script = ExtResource("5_7dvkv")
 
-[node name="TopTriggerCheck" type="CheckBox" parent="Dev Options/VBoxContainer/TriggerOptions" unique_id=391147269]
+[node name="TopTriggerCheck" type="CheckBox" parent="LeftBar/VBoxContainer/DevOptions/TriggerOptions" unique_id=391147269]
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "TOP TRIGGER"
 
-[node name="BottomTriggerCheck" type="CheckBox" parent="Dev Options/VBoxContainer/TriggerOptions" unique_id=1497214691]
+[node name="BottomTriggerCheck" type="CheckBox" parent="LeftBar/VBoxContainer/DevOptions/TriggerOptions" unique_id=1497214691]
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "BOTTOM TRIGGER"
 
-[node name="LeftTriggerCheck" type="CheckBox" parent="Dev Options/VBoxContainer/TriggerOptions" unique_id=671931655]
+[node name="LeftTriggerCheck" type="CheckBox" parent="LeftBar/VBoxContainer/DevOptions/TriggerOptions" unique_id=671931655]
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "LEFT TRIGGER"
 
-[node name="RightTriggerCheck" type="CheckBox" parent="Dev Options/VBoxContainer/TriggerOptions" unique_id=477713084]
+[node name="RightTriggerCheck" type="CheckBox" parent="LeftBar/VBoxContainer/DevOptions/TriggerOptions" unique_id=477713084]
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "RIGHT TRIGGER"
 
-[connection signal="pressed" from="Dev Options/VBoxContainer/FireButton" to="." method="_on_fire_button_pressed"]
-[connection signal="item_selected" from="Dev Options/VBoxContainer/TileOptions" to="." method="_on_option_button_item_selected"]
-[connection signal="toggled" from="Dev Options/VBoxContainer/TriggerOptions/TopTriggerCheck" to="Dev Options/VBoxContainer/TriggerOptions" method="_on_top_trigger_check_toggled"]
-[connection signal="toggled" from="Dev Options/VBoxContainer/TriggerOptions/BottomTriggerCheck" to="Dev Options/VBoxContainer/TriggerOptions" method="_on_bottom_trigger_check_toggled"]
-[connection signal="toggled" from="Dev Options/VBoxContainer/TriggerOptions/LeftTriggerCheck" to="Dev Options/VBoxContainer/TriggerOptions" method="_on_left_trigger_check_toggled"]
-[connection signal="toggled" from="Dev Options/VBoxContainer/TriggerOptions/RightTriggerCheck" to="Dev Options/VBoxContainer/TriggerOptions" method="_on_right_trigger_check_toggled"]
+[connection signal="pressed" from="LeftBar/VBoxContainer/VBoxContainer2/FireButton" to="." method="_on_fire_button_pressed"]
+[connection signal="item_selected" from="LeftBar/VBoxContainer/DevOptions/TileOptions" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="LeftBar/VBoxContainer/DevOptions/TriggerOptions/TopTriggerCheck" to="LeftBar/VBoxContainer/DevOptions/TriggerOptions" method="_on_top_trigger_check_toggled"]
+[connection signal="toggled" from="LeftBar/VBoxContainer/DevOptions/TriggerOptions/BottomTriggerCheck" to="LeftBar/VBoxContainer/DevOptions/TriggerOptions" method="_on_bottom_trigger_check_toggled"]
+[connection signal="toggled" from="LeftBar/VBoxContainer/DevOptions/TriggerOptions/LeftTriggerCheck" to="LeftBar/VBoxContainer/DevOptions/TriggerOptions" method="_on_left_trigger_check_toggled"]
+[connection signal="toggled" from="LeftBar/VBoxContainer/DevOptions/TriggerOptions/RightTriggerCheck" to="LeftBar/VBoxContainer/DevOptions/TriggerOptions" method="_on_right_trigger_check_toggled"]
