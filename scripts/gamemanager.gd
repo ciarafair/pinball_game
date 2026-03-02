@@ -21,7 +21,7 @@ func shoot_timer() -> void:
 	return
 
 func create_fireball(spawner: Node2D) -> void:
-	print_debug("Creating fireball...")
+	#print_debug("Creating fireball...")
 	if canShoot == true: 
 		var fireballInstance = fireballScene.instantiate()
 		spawner.add_child(fireballInstance)
