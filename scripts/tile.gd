@@ -84,7 +84,7 @@ func tile_action() -> void:
 			return
 		if self.tileType == TileType.TRIGGERTOP or self.tileType == TileType.TRIGGERBOTTOM or self.tileType == TileType.TRIGGERLEFT or self.tileType == TileType.TRIGGERRIGHT:
 			#print_debug("Trigger tile hit.")
-			GameManager.points += 1
+			GameManager.points += 20
 			self.fireballInstance = null
 			reset_type(self)
 			return
@@ -141,80 +141,80 @@ func top_trigger_check() -> bool:
 	self.isTopTrigger = true
 	var topRaycastInstance: RayCast2D = get_node("Area2D/TopRaycast") as RayCast2D
 	if topRaycastInstance.is_colliding() == true:
-		print_debug("Top trigger raycast is colliding with something.")
+		#print_debug("Top trigger raycast is colliding with something.")
 		var collider: Node = topRaycastInstance.get_collider()
 		if collider.get_parent() is Tile:
-			print_debug("Top trigger is colliding with a tile.")
+			#print_debug("Top trigger is colliding with a tile.")
 			if collider.get_parent().tileType != TileType.EMPTY:
-				print_debug("Top trigger is colliding with a non-empty tile.")
+				#print_debug("Top trigger is colliding with a non-empty tile.")
 				return false
 			if collider.get_parent().tileType == TileType.EMPTY:
-				print_debug("Top trigger is colliding with an empty tile.")
+				#print_debug("Top trigger is colliding with an empty tile.")
 				self.topTriggerInstance = collider.get_parent() as Tile
 				return true
-		print_debug("Top trigger is colliding with something that is not a tile.")
+		#print_debug("Top trigger is colliding with something that is not a tile.")
 		return false
-	print_debug("Top trigger is not colliding with anything.")
+	#print_debug("Top trigger is not colliding with anything.")
 	return false
 
 func bottom_trigger_check() -> bool:
 	self.isBottomTrigger = true
 	var bottomRaycastInstance: RayCast2D = get_node("Area2D/BottomRaycast") as RayCast2D
 	if bottomRaycastInstance.is_colliding() == true:
-		print_debug("Bottom trigger raycast is colliding with something.")
+		#print_debug("Bottom trigger raycast is colliding with something.")
 		var collider: Node = bottomRaycastInstance.get_collider()
 		if collider.get_parent() is Tile:
-			print_debug("Bottom trigger is colliding with a tile.")
+			#print_debug("Bottom trigger is colliding with a tile.")
 			if collider.get_parent().tileType != TileType.EMPTY:
-				print_debug("Bottom trigger is colliding with a non-empty tile.")
+				#print_debug("Bottom trigger is colliding with a non-empty tile.")
 				return false
 			if collider.get_parent().tileType == TileType.EMPTY:
-				print_debug("Bottom trigger is colliding with an empty tile.")
+				#print_debug("Bottom trigger is colliding with an empty tile.")
 				self.bottomTriggerInstance = collider.get_parent() as Tile
 				return true
-		print_debug("Bottom trigger is colliding with something that is not a tile.")
+		#print_debug("Bottom trigger is colliding with something that is not a tile.")
 		return false
-	print_debug("Bottom trigger is not colliding with anything.")
+	#print_debug("Bottom trigger is not colliding with anything.")
 	return false
 
 func left_trigger_check() -> bool:
 	self.isLeftTrigger = true
 	var leftRaycastInstance: RayCast2D = get_node("Area2D/LeftRaycast") as RayCast2D
 	if leftRaycastInstance.is_colliding() == true:
-		print_debug("Left trigger raycast is colliding with something.")
+		#print_debug("Left trigger raycast is colliding with something.")
 		var collider: Node = leftRaycastInstance.get_collider()
 		if collider.get_parent() is Tile:
-			print_debug("Left trigger is colliding with a tile.")
+			#print_debug("Left trigger is colliding with a tile.")
 			if collider.get_parent().tileType != TileType.EMPTY:
-				print_debug("Left trigger is colliding with a non-empty tile.")
+				#print_debug("Left trigger is colliding with a non-empty tile.")
 				return false
 			if collider.get_parent().tileType == TileType.EMPTY:
-				print_debug("Left trigger is colliding with an empty tile.")
+				#print_debug("Left trigger is colliding with an empty tile.")
 				self.leftTriggerInstance = collider.get_parent() as Tile
 				return true
-		print_debug("Left trigger is colliding with something that is not a tile.")
+		#print_debug("Left trigger is colliding with something that is not a tile.")
 		return false
-	print_debug("Left trigger is not colliding with anything.")
+	#print_debug("Left trigger is not colliding with anything.")
 	return false
 
 func right_trigger_check() -> bool:
 	self.isRightTrigger = true
 	var rightRaycastInstance: RayCast2D = get_node("Area2D/RightRaycast") as RayCast2D
 	if rightRaycastInstance.is_colliding() == true:
-		print_debug("Right trigger raycast is colliding with something.")
+		#print_debug("Right trigger raycast is colliding with something.")
 		var collider: Node = rightRaycastInstance.get_collider()
 		if collider.get_parent() is Tile:
-			print_debug("Right trigger is colliding with a tile.")
+			#print_debug("Right trigger is colliding with a tile.")
 			if collider.get_parent().tileType != TileType.EMPTY:
-				print_debug("Right trigger is colliding with a non-empty tile.")
+				#print_debug("Right trigger is colliding with a non-empty tile.")
 				return false
 			if collider.get_parent().tileType == TileType.EMPTY:
-				print_debug("Right trigger is colliding with an empty tile.")
+				#print_debug("Right trigger is colliding with an empty tile.")
 				self.rightTriggerInstance = collider.get_parent() as Tile
 				return true
-		print_debug("Right trigger is colliding with something that is not a tile.")
+		#print_debug("Right trigger is colliding with something that is not a tile.")
 		return false
-	print_debug("Right trigger is not colliding with anything.")
+	#print_debug("Right trigger is not colliding with anything.")
 	return false
 
 # Checks if a trigger has been selected in options.
