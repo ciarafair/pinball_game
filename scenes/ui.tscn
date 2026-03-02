@@ -1471,7 +1471,7 @@ variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 base_font = SubResource("FontFile_fpun6")
 variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 
-[sub_resource type="Image" id="Image_8dubc"]
+[sub_resource type="Image" id="Image_p7vwb"]
 data = {
 "data": PackedByteArray("/////////////////////w=="),
 "format": "RGBA8",
@@ -1481,7 +1481,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_gunhw"]
-image = SubResource("Image_8dubc")
+image = SubResource("Image_p7vwb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux5qa"]
 content_margin_left = 4.0
@@ -1638,6 +1638,7 @@ metadata/_edit_use_anchors_ = true
 [node name="TileOptions" type="OptionButton" parent="Dev Options/VBoxContainer" unique_id=1810759873]
 layout_mode = 2
 theme = ExtResource("3_ktti3")
+alignment = 1
 item_count = 1
 popup/item_0/text = "Lorum Ipsum"
 popup/item_0/id = 0
