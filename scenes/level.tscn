@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://cyat6s1pfbugq" path="res://assets/tiles/androx_16x16.tres" id="2_2r41h"]
 [ext_resource type="PackedScene" uid="uid://byxm30q8hwjlj" path="res://scenes/ui.tscn" id="3_2r41h"]
 [ext_resource type="PackedScene" uid="uid://dp1fotos2nt71" path="res://scenes/grid.tscn" id="5_b121j"]
-[ext_resource type="Texture2D" uid="uid://hpbe84tnegh2" path="res://assets/tiles/sprites/Free Industrial Zone Tileset/Tiles/IndustrialTile_54.png" id="6_klq6b"]
+[ext_resource type="Texture2D" uid="uid://b0mitv6scatxt" path="res://assets/tiles/sprites/Textures16x16ByAndrox/Textures16x16/2a.png" id="5_ppgk2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klq6b"]
 bg_color = Color(1, 1, 1, 0.019607844)
@@ -37,5 +37,6 @@ position = Vector2(368, 496)
 metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Spawner" unique_id=2054373069]
-texture = ExtResource("6_klq6b")
+scale = Vector2(2, 2)
+texture = ExtResource("5_ppgk2")
 metadata/_edit_lock_ = true
