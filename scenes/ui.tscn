@@ -1639,7 +1639,7 @@ layout_mode = 2
 [node name="PointsLabel" type="RichTextLabel" parent="RightBar/MarginContainer3/VBoxContainer" unique_id=154678867]
 layout_mode = 2
 theme = SubResource("Theme_h6wmr")
-text = "POINTS: N/Ass"
+text = "POINTS: N/A"
 fit_content = true
 horizontal_alignment = 1
 script = ExtResource("3_cgfq5")
