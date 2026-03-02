@@ -1,0 +1,32 @@
+[gd_resource type="Theme" format=3 uid="uid://ymwserri8enb"]
+
+[ext_resource type="FontFile" uid="uid://01hbsv5q5j48" path="res://assets/fonts/Vastantonius.ttf" id="1_idhui"]
+[ext_resource type="StyleBox" uid="uid://qbm4h5tvvgcs" path="res://assets/ButtonStylebox.tres" id="2_rp3em"]
+[ext_resource type="StyleBox" uid="uid://bmww0ja3jnqsw" path="res://assets/ButtonStyleboxHover.tres" id="3_rp3em"]
+
+[resource]
+default_font = ExtResource("1_idhui")
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_idhui")
+Button/styles/disabled = ExtResource("2_rp3em")
+Button/styles/focus = ExtResource("2_rp3em")
+Button/styles/hover = ExtResource("3_rp3em")
+Button/styles/normal = ExtResource("2_rp3em")
+Button/styles/pressed = ExtResource("2_rp3em")

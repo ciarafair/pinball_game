@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ddx0m28fh06kr"]
+
+[ext_resource type="Script" uid="uid://b2qqfckrj3mgx" path="res://scripts/fireball.gd" id="1_1gl40"]
+[ext_resource type="TileSet" uid="uid://eqyk23bgsoe3" path="res://assets/tiles/topdown_scifi_tileset.tres" id="2_1gl40"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gl40"]
+size = Vector2(170, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klq6b"]
+size = Vector2(161.38733, 170.65894)
+
+[node name="Fireball" type="CharacterBody2D" unique_id=1567191770]
+script = ExtResource("1_1gl40")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=792908423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=325966372]
+scale = Vector2(0.09, 0.08)
+shape = SubResource("RectangleShape2D_1gl40")
+debug_color = Color(0.8073102, 0.0022796649, 0.99166363, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1166569740]
+scale = Vector2(0.09, 0.08)
+shape = SubResource("RectangleShape2D_klq6b")
+debug_color = Color(0.9731565, 0, 0.4393428, 0.41960785)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2092241028]
+position = Vector2(-8, 8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 2, 0, 12, 0, 9, 0, 0, 0)
+tile_set = ExtResource("2_1gl40")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

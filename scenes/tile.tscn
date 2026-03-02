@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://uf15s5pnu4q3"]
+
+[ext_resource type="Theme" uid="uid://tlx13u4x7ql5" path="res://assets/themes/tile_button.tres" id="1_ywnoi"]
+[ext_resource type="Script" uid="uid://cmyhasmyc5kqf" path="res://scripts/tile.gd" id="2_q7utx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(2, 2)
+
+[node name="Tile" type="Button" unique_id=360474349]
+clip_contents = true
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = -1
+anchor_right = 0.033333335
+anchor_bottom = 0.05925926
+theme = ExtResource("1_ywnoi")
+script = ExtResource("2_q7utx")
+isTopTrigger = null
+isBottomTrigger = null
+isLeftTrigger = null
+isRightTrigger = null
+tileType = null
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1409863359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+expand_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1528036666]
+position = Vector2(16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1058011300]
+shape = SubResource("RectangleShape2D_2r41h")
+debug_color = Color(0.37623355, 0.6132193, 0, 0.41960785)
+
+[node name="TopRaycast" type="RayCast2D" parent="Area2D" unique_id=456156139]
+rotation = -3.1415925
+target_position = Vector2(6.67572e-06, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="BottomRaycast" type="RayCast2D" parent="Area2D" unique_id=931047828]
+target_position = Vector2(6.67572e-06, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="LeftRaycast" type="RayCast2D" parent="Area2D" unique_id=2048117669]
+rotation = 1.5707964
+target_position = Vector2(6.67572e-06, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RightRaycast" type="RayCast2D" parent="Area2D" unique_id=1523985556]
+rotation = -1.5707964
+target_position = Vector2(6.67572e-06, 48)
+collide_with_areas = true
+collide_with_bodies = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

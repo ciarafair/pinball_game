@@ -1,0 +1,764 @@
+[gd_scene format=4 uid="uid://dp1fotos2nt71"]
+
+[ext_resource type="Script" uid="uid://bcxfwf35lcnju" path="res://scripts/grid.gd" id="1_2s7k2"]
+[ext_resource type="TileSet" uid="uid://cyat6s1pfbugq" path="res://assets/tiles/androx_16x16.tres" id="1_w88cy"]
+[ext_resource type="PackedScene" uid="uid://uf15s5pnu4q3" path="res://scenes/tile.tscn" id="2_2s7k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(224, 416)
+
+[node name="Grid" type="Node2D" unique_id=272230482]
+script = ExtResource("1_2s7k2")
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=503816419]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAALAAUAAAABAAYAAAALAAoAAAABAAcAAAALAAwAAAABAAYAAAALAA4AAAABAAcAAAAMAAIAAAABAAYAAAAMAAYAAAABAAYAAAAMAAcAAAABAAYAAAAMAAoAAAABAAYAAAAMAAsAAAABAAcAAAANAAQAAAABAAcAAAANAA4AAAABAAcAAAAOAAIAAAABAAcAAAAOAAgAAAABAAYAAAAOAAwAAAABAAcAAAAOAA0AAAABAAYAAAAOAA4AAAABAAcAAAAPAAcAAAABAAcAAAAPAAwAAAABAAcAAAAPAA0AAAABAAYAAAAQAAQAAAABAAcAAAAQAAUAAAABAAcAAAAQAAYAAAABAAcAAAARAAUAAAABAAYAAAARAAYAAAABAAcAAAARAAkAAAABAAcAAAALAAIAAAABAAYAAAALAAgAAAABAAYAAAALAAsAAAABAAYAAAALAA0AAAABAAYAAAAMAAQAAAABAAYAAAAMAAgAAAABAAYAAAAMAAkAAAABAAYAAAAMAAwAAAABAAYAAAAMAA0AAAABAAYAAAANAAIAAAABAAYAAAANAAYAAAABAAYAAAANAAcAAAABAAYAAAANAAkAAAABAAYAAAANAAwAAAABAAYAAAAOAAMAAAABAAYAAAAOAAQAAAABAAYAAAAOAAUAAAABAAYAAAAOAAoAAAABAAYAAAAPAAIAAAABAAYAAAAPAAMAAAABAAYAAAAPAAUAAAABAAYAAAAPAAYAAAABAAYAAAAPAAgAAAABAAYAAAAPAAoAAAABAAYAAAAPAAsAAAABAAYAAAAQAAIAAAABAAYAAAAQAAMAAAABAAYAAAAQAAkAAAABAAYAAAAQAAsAAAABAAYAAAAQAAwAAAABAAYAAAAQAA0AAAABAAYAAAAQAA4AAAABAAYAAAARAAIAAAABAAYAAAARAAMAAAABAAYAAAARAAQAAAABAAYAAAARAAcAAAABAAYAAAARAAgAAAABAAYAAAARAAwAAAABAAYAAAA=")
+tile_set = ExtResource("1_w88cy")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=154443810]
+position = Vector2(464, 272)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1678896754]
+shape = SubResource("RectangleShape2D_2r41h")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=556762878]
+clip_contents = true
+offset_left = 352.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 480.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 7
+metadata/_edit_lock_ = true
+
+[node name="Tile" parent="GridContainer" unique_id=360474349 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile2" parent="GridContainer" unique_id=1096305061 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile3" parent="GridContainer" unique_id=66824138 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile4" parent="GridContainer" unique_id=250351777 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile5" parent="GridContainer" unique_id=434745633 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile6" parent="GridContainer" unique_id=1596542059 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile7" parent="GridContainer" unique_id=68435986 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile8" parent="GridContainer" unique_id=2081339171 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile9" parent="GridContainer" unique_id=1343768939 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile10" parent="GridContainer" unique_id=961003725 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile11" parent="GridContainer" unique_id=817816729 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile12" parent="GridContainer" unique_id=590419709 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile13" parent="GridContainer" unique_id=1463908077 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile14" parent="GridContainer" unique_id=1690308200 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile15" parent="GridContainer" unique_id=224677115 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile16" parent="GridContainer" unique_id=192634436 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile17" parent="GridContainer" unique_id=3833448 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile18" parent="GridContainer" unique_id=2095720628 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile19" parent="GridContainer" unique_id=1673299638 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile20" parent="GridContainer" unique_id=98385947 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile21" parent="GridContainer" unique_id=1510434340 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile22" parent="GridContainer" unique_id=443519796 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile23" parent="GridContainer" unique_id=166752126 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile24" parent="GridContainer" unique_id=1123264272 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile25" parent="GridContainer" unique_id=1010237303 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile26" parent="GridContainer" unique_id=1467444667 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile27" parent="GridContainer" unique_id=250400748 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile28" parent="GridContainer" unique_id=1244034679 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile29" parent="GridContainer" unique_id=1315312232 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile30" parent="GridContainer" unique_id=1711271224 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile31" parent="GridContainer" unique_id=1309337001 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile32" parent="GridContainer" unique_id=113516475 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile33" parent="GridContainer" unique_id=1868564329 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile34" parent="GridContainer" unique_id=1085127238 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile35" parent="GridContainer" unique_id=835924231 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile36" parent="GridContainer" unique_id=814089592 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile37" parent="GridContainer" unique_id=83372063 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile38" parent="GridContainer" unique_id=1825730070 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile39" parent="GridContainer" unique_id=69176398 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile40" parent="GridContainer" unique_id=1374666831 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile41" parent="GridContainer" unique_id=818849391 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile42" parent="GridContainer" unique_id=1762600072 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile43" parent="GridContainer" unique_id=857710853 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile44" parent="GridContainer" unique_id=1633927709 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile45" parent="GridContainer" unique_id=1006181977 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile46" parent="GridContainer" unique_id=346434435 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile47" parent="GridContainer" unique_id=1483450884 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile48" parent="GridContainer" unique_id=1372183085 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile49" parent="GridContainer" unique_id=789946009 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile50" parent="GridContainer" unique_id=992673754 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile51" parent="GridContainer" unique_id=1132880267 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile52" parent="GridContainer" unique_id=1649376136 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile53" parent="GridContainer" unique_id=642362790 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile54" parent="GridContainer" unique_id=1249721136 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile55" parent="GridContainer" unique_id=1742638187 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile56" parent="GridContainer" unique_id=1182089551 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile57" parent="GridContainer" unique_id=1636664677 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile58" parent="GridContainer" unique_id=1615860265 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile59" parent="GridContainer" unique_id=71360575 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile60" parent="GridContainer" unique_id=1863541951 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile61" parent="GridContainer" unique_id=172869777 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile62" parent="GridContainer" unique_id=650615562 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile63" parent="GridContainer" unique_id=1230486686 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile64" parent="GridContainer" unique_id=574676784 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile65" parent="GridContainer" unique_id=479213123 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile66" parent="GridContainer" unique_id=10570529 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile67" parent="GridContainer" unique_id=1195347517 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile68" parent="GridContainer" unique_id=610271662 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile69" parent="GridContainer" unique_id=447635876 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile70" parent="GridContainer" unique_id=2012100309 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile71" parent="GridContainer" unique_id=244287931 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile72" parent="GridContainer" unique_id=1536945396 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile73" parent="GridContainer" unique_id=359653586 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile74" parent="GridContainer" unique_id=1342596877 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile75" parent="GridContainer" unique_id=1748472983 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile76" parent="GridContainer" unique_id=1451420682 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile77" parent="GridContainer" unique_id=1328360810 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile78" parent="GridContainer" unique_id=1343674682 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile79" parent="GridContainer" unique_id=181148686 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile80" parent="GridContainer" unique_id=658865151 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile81" parent="GridContainer" unique_id=551755068 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile82" parent="GridContainer" unique_id=1435782978 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile83" parent="GridContainer" unique_id=1190544171 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile84" parent="GridContainer" unique_id=340007591 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile85" parent="GridContainer" unique_id=939922458 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile86" parent="GridContainer" unique_id=1016100868 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile87" parent="GridContainer" unique_id=271175971 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile88" parent="GridContainer" unique_id=372646358 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile89" parent="GridContainer" unique_id=1269651173 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile90" parent="GridContainer" unique_id=1948599369 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[node name="Tile91" parent="GridContainer" unique_id=1642109301 instance=ExtResource("2_2s7k2")]
+layout_mode = 2
+isTopTrigger = false
+isBottomTrigger = false
+isLeftTrigger = false
+isRightTrigger = false
+tileType = 0
+
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
