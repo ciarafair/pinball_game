@@ -44,34 +44,55 @@ func tile_action() -> void:
 			self.fireballInstance.queue_free()
 			self.fireballInstance = null
 			return
+
 		if self.tileType == TileType.TOPLEFTCORNER:
 			if fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(1,0) # Right
 			if fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(0,1) # Down
+			if fireballInstance.direction == Vector2(0,1): # Down
+				self.fireballInstance.direction = Vector2(0, -1) # Up
+			if fireballInstance.direction == Vector2(1,0): # Right
+				self.fireballInstance.direction = Vector2(-1,0) # Left
 			self.fireballInstance = null
 			return
+
 		if self.tileType == TileType.TOPRIGHTCORNER:
 			if fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(-1,0) # Left
 			if fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(0,1) # Down
+			if fireballInstance.direction == Vector2(0,1): # Down
+				self.fireballInstance.direction = Vector2(0, -1) # Up
+			if fireballInstance.direction == Vector2(-1,0): # Left
+				self.fireballInstance.direction = Vector2(1,0) # Right
 			self.fireballInstance = null
 			return
+
 		if self.tileType == TileType.BOTTOMLEFTCORNER:
 			if fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(1,0) # Right
 			if fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(0,-1) # Up
+			if fireballInstance.direction == Vector2(0,-1): # Up
+				self.fireballInstance.direction = Vector2(0,1) # Down
+			if fireballInstance.direction == Vector2(1,0): # Right
+				self.fireballInstance.direction = Vector2(-1,0) # Left
 			self.fireballInstance = null
 			return
+
 		if self.tileType == TileType.BOTTOMRIGHTCORNER:
 			if fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(-1,0) # Left
 			if fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(0,-1) # Up
+			if fireballInstance.direction == Vector2(0,-1): # Up
+				self.fireballInstance.direction = Vector2(0,1) # Down
+			if fireballInstance.direction == Vector2(-1,0): # Left
+				self.fireballInstance.direction = Vector2(1,0) # Right
 			self.fireballInstance = null
 			return
+
 		if self.tileType == TileType.POINT_BLOCK:
 			#print_debug("POINT_BLOCK tile hit.")
 			self.fireballInstance.direction = -self.fireballInstance.direction
@@ -306,11 +327,15 @@ func _on_pressed() -> void:
 		print_debug("Tile ", dictionary_position, " has a hole. You cannot place a tile on tile.")
 		return
 
-	# Makes it so that you can only replace tiles with empty tiles, and you can only place non-empty tiles on empty tiles.
-	if GameManager.selectedTileType != TileType.EMPTY:
+	# Makes it so that you cannot replace tiles with empty tiles.
+	if GameManager.selectedTileType == TileType.EMPTY:
 		if empty_check() == false:
-			print_debug("Could not place tile as there is a tile already there.")
+			print_debug("You cannot replace a non-empty tile with an empty tile.")
 			return
+	# Makes it so you cannot replace non-empty tiles with other non-empty tiles without first replacing them with empty tiles.
+	elif empty_check() == false:
+		print_debug("You cannot replace a non-empty tile with another tile. You must first replace it with an empty tile.")
+		return
 
 	# Checks if trigger options are selected, and if so, checks if the trigger can be placed.
 	if check_trigger(GameManager.selectedTileTrigger) == false:
@@ -319,4 +344,7 @@ func _on_pressed() -> void:
 
 	self.tileType = GameManager.selectedTileType
 	set_texture(self)
+
+	# Reset selected tile type and trigger options after placing tile.
+	GameManager.selectedTileType = TileType.EMPTY
 	return

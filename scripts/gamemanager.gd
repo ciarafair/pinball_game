@@ -11,7 +11,9 @@ var selectedTileTrigger: Dictionary = {
 
 @export var tile_dictionary: Dictionary = {}
 
-var points: int = 0
+var player_inventory: Dictionary = {}
+
+var points: int = 60
 
 var spawner: Node2D = null
 var fireballScene: Resource = preload("res://scenes/fireball.tscn")
@@ -22,11 +24,11 @@ func shoot_timer() -> void:
 	#print_debug("You can shoot again.")
 	return
 
-func create_fireball(spawner: Node2D) -> void:
+func create_fireball(node: Node2D) -> void:
 	#print_debug("Creating fireball...")
 	if canShoot == true: 
 		var fireballInstance = fireballScene.instantiate()
-		spawner.add_child(fireballInstance)
+		node.add_child(fireballInstance)
 		fireballInstance.direction = Vector2(0, -1)
 		canShoot = false
 		shoot_timer()

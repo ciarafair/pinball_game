@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://qbm4h5tvvgcs" path="res://assets/ButtonStylebox.tres" id="3_7dvkv"]
 [ext_resource type="Script" uid="uid://brnsp02ssd2rm" path="res://scripts/points_label.gd" id="3_cgfq5"]
 [ext_resource type="Theme" uid="uid://cr26funxprou4" path="res://assets/themes/option_button.tres" id="3_ktti3"]
+[ext_resource type="PackedScene" uid="uid://dgj8b85ctnduh" path="res://scenes/store_tile.tscn" id="3_vdcm2"]
 [ext_resource type="Script" uid="uid://yufrv66bes88" path="res://scripts/option_button.gd" id="4_cgfq5"]
 [ext_resource type="Script" uid="uid://chi3ti74x1ega" path="res://scripts/trigger_options.gd" id="5_7dvkv"]
 [ext_resource type="Theme" uid="uid://djqgqpmnsj1m1" path="res://assets/themes/checkbox.tres" id="6_vdcm2"]
@@ -1473,7 +1474,7 @@ variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 base_font = SubResource("FontFile_fpun6")
 variation_transform = Transform2D(1, 0.2, 0, 1, 0, 0)
 
-[sub_resource type="Image" id="Image_ktti3"]
+[sub_resource type="Image" id="Image_cgfq5"]
 data = {
 "data": PackedByteArray("/////////////////////w=="),
 "format": "RGBA8",
@@ -1483,7 +1484,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_gunhw"]
-image = SubResource("Image_ktti3")
+image = SubResource("Image_cgfq5")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux5qa"]
 content_margin_left = 4.0
@@ -1602,6 +1603,22 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 metadata/_edit_lock_ = true
 
+[node name="MarginContainer2" type="MarginContainer" parent="RightBar" unique_id=435023063]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 456
+
+[node name="Background" type="Panel" parent="RightBar/MarginContainer2" unique_id=475209234]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
+
+[node name="MarginContainer" type="MarginContainer" parent="RightBar/MarginContainer2" unique_id=1891445721]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
 [node name="MarginContainer" type="MarginContainer" parent="RightBar" unique_id=1218870367]
 layout_mode = 2
 theme_override_constants/margin_top = 16
@@ -1613,20 +1630,9 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="RightBar/MarginContainer/VBoxContainer" unique_id=1074200715]
 layout_mode = 2
 theme = SubResource("Theme_h6wmr")
-text = "NEXT TILE:"
+text = "STORE:"
 fit_content = true
 horizontal_alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="RightBar" unique_id=435023063]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 37
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 456
-
-[node name="Background" type="Panel" parent="RightBar/MarginContainer2" unique_id=475209234]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 
 [node name="MarginContainer3" type="MarginContainer" parent="RightBar" unique_id=611314798]
 layout_mode = 2
@@ -1733,6 +1739,22 @@ text = "LEFT TRIGGER"
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "RIGHT TRIGGER"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1583914194]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Store Tile" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=360474349 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile2" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=9072098 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile3" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=535876737 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile4" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=822907012 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
 
 [connection signal="pressed" from="LeftBar/VBoxContainer/VBoxContainer2/FireButton" to="." method="_on_fire_button_pressed"]
 [connection signal="item_selected" from="LeftBar/VBoxContainer/DevOptions/TileOptions" to="." method="_on_option_button_item_selected"]

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dgj8b85ctnduh"]
+
+[ext_resource type="Theme" uid="uid://tlx13u4x7ql5" path="res://assets/themes/tile_button.tres" id="1_g6e7d"]
+[ext_resource type="Script" uid="uid://baqix0elnt7fk" path="res://scripts/store_tile.gd" id="2_g6e7d"]
+[ext_resource type="Theme" uid="uid://dyjpbjp37msse" path="res://assets/themes/store_tile.tres" id="3_kfo2g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r41h"]
+size = Vector2(32, 32)
+
+[node name="Store Tile" type="Button" unique_id=360474349]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = -1
+anchor_right = 0.033333335
+anchor_bottom = 0.05925926
+theme = ExtResource("1_g6e7d")
+script = ExtResource("2_g6e7d")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1409863359]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+expand_mode = 4
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1528036666]
+position = Vector2(16, 16)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1058011300]
+shape = SubResource("RectangleShape2D_2r41h")
+debug_color = Color(0.37623355, 0.6132193, 0, 0.41960785)
+metadata/_edit_lock_ = true
+
+[node name="PriceLabel" type="Label" parent="." unique_id=463323483]
+layout_mode = 0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 8.0
+theme = ExtResource("3_kfo2g")
+text = "$0"
+horizontal_alignment = 2
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
