@@ -1627,13 +1627,6 @@ metadata/_edit_lock_ = true
 [node name="VBoxContainer" type="VBoxContainer" parent="RightBar/MarginContainer" unique_id=1172438656]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="RightBar/MarginContainer/VBoxContainer" unique_id=1074200715]
-layout_mode = 2
-theme = SubResource("Theme_h6wmr")
-text = "STORE:"
-fit_content = true
-horizontal_alignment = 1
-
 [node name="MarginContainer3" type="MarginContainer" parent="RightBar" unique_id=611314798]
 layout_mode = 2
 theme_override_constants/margin_top = 96
@@ -1641,14 +1634,6 @@ metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="RightBar/MarginContainer3" unique_id=1203051481]
 layout_mode = 2
-
-[node name="PointsLabel" type="RichTextLabel" parent="RightBar/MarginContainer3/VBoxContainer" unique_id=154678867]
-layout_mode = 2
-theme = SubResource("Theme_h6wmr")
-text = "POINTS: N/A"
-fit_content = true
-horizontal_alignment = 1
-script = ExtResource("3_cgfq5")
 
 [node name="LeftBar" type="MarginContainer" parent="." unique_id=1351485086]
 layout_mode = 0
@@ -1663,21 +1648,62 @@ metadata/_edit_lock_ = true
 layout_mode = 2
 theme_override_constants/separation = 20
 
+[node name="PointsLabel" type="RichTextLabel" parent="LeftBar/VBoxContainer" unique_id=154678867]
+layout_mode = 2
+theme = SubResource("Theme_h6wmr")
+text = "POINTS: N/A"
+fit_content = true
+horizontal_alignment = 1
+script = ExtResource("3_cgfq5")
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1127666692]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1760419626]
+[node name="VBoxContainer2" type="VBoxContainer" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1750775246]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=1074200715]
+layout_mode = 2
+theme = SubResource("Theme_h6wmr")
+text = "STORE:"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=1583914194]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LevelName" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=1522544431]
+[node name="Store Tile" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxContainer" unique_id=360474349 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile2" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxContainer" unique_id=9072098 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile3" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxContainer" unique_id=535876737 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="Store Tile4" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer2/HBoxContainer" unique_id=822907012 instance=ExtResource("3_vdcm2")]
+layout_mode = 2
+
+[node name="FireButton" type="Button" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1505859896]
+layout_mode = 2
+theme = ExtResource("2_8dubc")
+text = "SHOOT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory" type="VBoxContainer" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1760419626]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LevelName" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2/Inventory" unique_id=1522544431]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_8iemx")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="RichTextLabel" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer/LevelName" unique_id=44385031]
+[node name="Label" type="RichTextLabel" parent="LeftBar/VBoxContainer/VBoxContainer2/Inventory/LevelName" unique_id=44385031]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1690,19 +1716,14 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2/VBoxContainer" unique_id=201036725]
+[node name="Panel" type="Panel" parent="LeftBar/VBoxContainer/VBoxContainer2/Inventory" unique_id=201036725]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("3_7dvkv")
 
-[node name="FireButton" type="Button" parent="LeftBar/VBoxContainer/VBoxContainer2" unique_id=1505859896]
-layout_mode = 2
-theme = ExtResource("2_8dubc")
-text = "SHOOT"
-metadata/_edit_use_anchors_ = true
-
 [node name="DevOptions" type="VBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1975079287]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 25
 
@@ -1739,22 +1760,6 @@ text = "LEFT TRIGGER"
 layout_mode = 2
 theme = ExtResource("6_vdcm2")
 text = "RIGHT TRIGGER"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="LeftBar/VBoxContainer" unique_id=1583914194]
-layout_mode = 2
-theme_override_constants/separation = 8
-
-[node name="Store Tile" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=360474349 instance=ExtResource("3_vdcm2")]
-layout_mode = 2
-
-[node name="Store Tile2" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=9072098 instance=ExtResource("3_vdcm2")]
-layout_mode = 2
-
-[node name="Store Tile3" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=535876737 instance=ExtResource("3_vdcm2")]
-layout_mode = 2
-
-[node name="Store Tile4" parent="LeftBar/VBoxContainer/HBoxContainer" unique_id=822907012 instance=ExtResource("3_vdcm2")]
-layout_mode = 2
 
 [connection signal="pressed" from="LeftBar/VBoxContainer/VBoxContainer2/FireButton" to="." method="_on_fire_button_pressed"]
 [connection signal="item_selected" from="LeftBar/VBoxContainer/DevOptions/TileOptions" to="." method="_on_option_button_item_selected"]

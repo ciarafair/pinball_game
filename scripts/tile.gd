@@ -46,64 +46,78 @@ func tile_action() -> void:
 			return
 
 		if self.tileType == TileType.TOPLEFTCORNER:
+			if self.fireballInstance == null:
+				return
 			if fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(1,0) # Right
-			if fireballInstance.direction == Vector2(-1,0): # Left
+			elif fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(0,1) # Down
-			if fireballInstance.direction == Vector2(0,1): # Down
+			elif fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(0, -1) # Up
-			if fireballInstance.direction == Vector2(1,0): # Right
+			elif fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(-1,0) # Left
 			self.fireballInstance = null
 			return
 
 		if self.tileType == TileType.TOPRIGHTCORNER:
+			if self.fireballInstance == null:
+				return
 			if fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(-1,0) # Left
-			if fireballInstance.direction == Vector2(1,0): # Right
+			elif fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(0,1) # Down
-			if fireballInstance.direction == Vector2(0,1): # Down
+			elif fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(0, -1) # Up
-			if fireballInstance.direction == Vector2(-1,0): # Left
+			elif fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(1,0) # Right
 			self.fireballInstance = null
 			return
 
 		if self.tileType == TileType.BOTTOMLEFTCORNER:
+			if self.fireballInstance == null:
+				return
 			if fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(1,0) # Right
-			if fireballInstance.direction == Vector2(-1,0): # Left
+			elif fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(0,-1) # Up
-			if fireballInstance.direction == Vector2(0,-1): # Up
+			elif fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(0,1) # Down
-			if fireballInstance.direction == Vector2(1,0): # Right
+			elif fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(-1,0) # Left
 			self.fireballInstance = null
 			return
 
 		if self.tileType == TileType.BOTTOMRIGHTCORNER:
+			if self.fireballInstance == null:
+				return
 			if fireballInstance.direction == Vector2(0,1): # Down
 				self.fireballInstance.direction = Vector2(-1,0) # Left
-			if fireballInstance.direction == Vector2(1,0): # Right
+			elif fireballInstance.direction == Vector2(1,0): # Right
 				self.fireballInstance.direction = Vector2(0,-1) # Up
-			if fireballInstance.direction == Vector2(0,-1): # Up
+			elif fireballInstance.direction == Vector2(0,-1): # Up
 				self.fireballInstance.direction = Vector2(0,1) # Down
-			if fireballInstance.direction == Vector2(-1,0): # Left
+			elif fireballInstance.direction == Vector2(-1,0): # Left
 				self.fireballInstance.direction = Vector2(1,0) # Right
 			self.fireballInstance = null
 			return
 
 		if self.tileType == TileType.POINT_BLOCK:
+			if self.fireballInstance == null:
+				return
 			#print_debug("POINT_BLOCK tile hit.")
 			self.fireballInstance.direction = -self.fireballInstance.direction
 			self.fireballInstance = null
 			return
 		if self.tileType == TileType.BOUNCE:
+			if self.fireballInstance == null:
+				return
 			#print_debug("Bouncing projectile.")
 			self.fireballInstance.direction = -self.fireballInstance.direction
 			self.fireballInstance = null
 			return
 		if self.tileType == TileType.TRIGGERTOP or self.tileType == TileType.TRIGGERBOTTOM or self.tileType == TileType.TRIGGERLEFT or self.tileType == TileType.TRIGGERRIGHT:
+			if self.fireballInstance == null:
+				return
 			#print_debug("Trigger tile hit.")
 			GameManager.points += 20
 			self.fireballInstance = null
